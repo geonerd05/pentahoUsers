@@ -3,17 +3,16 @@
 //credentials for the pentaho admin account
 $credentials = 'admin:password';
 //home of the pentaho webapp
-$base = 'http://192.168.4.42:8585/pentaho';
+$base = 'http://localhost:8080/pentaho';
 //entry point for all web pentaho web service apis
 $apis = $base.'/api';
 //entry point for pentaho's user admin web service api
 $userroledao = $apis.'/userroledao';
 
-//our addition
+//our addition, variables that contains file and role names 
 
-
-$filenameCSV="liste_perso_ine.csv";
-$roleAssign="ine_P1";
+$filenameCSV="myfile.csv";
+$roleAssign="my_role";
 
 //utility to send credentials with each curl request
 //required to authenticate against pentaho.
@@ -330,7 +329,7 @@ switch ($action) {
                 break;
         }
         break;
-
+//our addition 
     case 'create users':
         {
             $row = 1;
